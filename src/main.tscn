@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://3ul5qd8ag8g4"]
+[gd_scene load_steps=6 format=3 uid="uid://3ul5qd8ag8g4"]
 
 [ext_resource type="Texture2D" uid="uid://rk1an538fvbi" path="res://icon.svg" id="1_gh0ne"]
 [ext_resource type="Script" uid="uid://hdwskrv86svi" path="res://src/fish.gd" id="2_5q4o7"]
+[ext_resource type="PackedScene" uid="uid://dprwukmm3bx1i" path="res://src/projectile/projectile.tscn" id="3_3cfgd"]
+[ext_resource type="Script" uid="uid://bnkwmsi2a0rqy" path="res://src/tower/tower.gd" id="3_5q4o7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_3cfgd"]
 
@@ -18,3 +20,17 @@ modulate = Color(0.881982, 0, 0.113214, 1)
 position = Vector2(1016, 251)
 texture = ExtResource("1_gh0ne")
 script = ExtResource("2_5q4o7")
+
+[node name="Projectile" parent="." instance=ExtResource("3_3cfgd")]
+position = Vector2(141, 252)
+
+[node name="Tower" type="Sprite2D" parent="."]
+modulate = Color(0.239597, 0.717409, 0, 1)
+position = Vector2(142, 246)
+texture = ExtResource("1_gh0ne")
+script = ExtResource("3_5q4o7")
+
+[node name="Timer" type="Timer" parent="Tower"]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="Tower/Timer" to="Tower" method="_on_timer_timeout"]
