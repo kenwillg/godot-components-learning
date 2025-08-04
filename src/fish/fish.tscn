@@ -1,18 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://chhgmyqpak00r"]
+[gd_scene load_steps=4 format=3 uid="uid://cafhf3gqiw5xv"]
 
-[ext_resource type="Script" uid="uid://hdwskrv86svi" path="res://src/fish/fish.gd" id="1_50vmv"]
-[ext_resource type="Texture2D" uid="uid://rk1an538fvbi" path="res://icon.svg" id="2_qef01"]
+[ext_resource type="Script" uid="uid://hdwskrv86svi" path="res://src/fish/fish.gd" id="1_7wefj"]
+[ext_resource type="Texture2D" uid="uid://rk1an538fvbi" path="res://icon.svg" id="2_kaclk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cfgd"]
 radius = 62.0
 height = 128.0
 
 [node name="Fish" type="CharacterBody2D"]
-script = ExtResource("1_50vmv")
+collision_mask = 0
+script = ExtResource("1_7wefj")
+SPEED = -300
+health = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.881982, 0, 0.113214, 1)
-texture = ExtResource("2_qef01")
+texture = ExtResource("2_kaclk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3cfgd")

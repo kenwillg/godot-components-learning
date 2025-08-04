@@ -11,6 +11,7 @@ modulate = Color(0.427631, 0.259347, 0.0659949, 1)
 scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("1_0ck1q")
 script = ExtResource("2_tawxj")
+damage = 50
 
 [node name="Area2D" type="Area2D" parent="."]
 
