@@ -1,5 +1,8 @@
-extends Sprite2D
+extends StaticBody2D
 
+@export var health:float = 200
+
+@onready var health_bar: ProgressBar = $Health
 @onready var timer: Timer = %Timer
 
 func _ready() -> void:
