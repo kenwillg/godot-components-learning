@@ -1,15 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://3ul5qd8ag8g4"]
+[gd_scene load_steps=6 format=3 uid="uid://3ul5qd8ag8g4"]
 
+[ext_resource type="PackedScene" uid="uid://chhgmyqpak00r" path="res://src/fish/fish.tscn" id="1_3cfgd"]
 [ext_resource type="Texture2D" uid="uid://rk1an538fvbi" path="res://icon.svg" id="1_gh0ne"]
-[ext_resource type="Script" uid="uid://hdwskrv86svi" path="res://src/fish.gd" id="2_5q4o7"]
 [ext_resource type="PackedScene" uid="uid://dprwukmm3bx1i" path="res://src/projectile/projectile.tscn" id="3_3cfgd"]
 [ext_resource type="Script" uid="uid://bnkwmsi2a0rqy" path="res://src/tower/tower.gd" id="3_5q4o7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_3cfgd"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cfgd"]
-radius = 62.0
-height = 128.0
 
 [node name="Main" type="Node"]
 
@@ -19,16 +15,8 @@ position = Vector2(575.75, 323.75)
 scale = Vector2(1152.5, 648.5)
 texture = SubResource("CanvasTexture_3cfgd")
 
-[node name="Fish" type="CharacterBody2D" parent="."]
+[node name="Fish" parent="." instance=ExtResource("1_3cfgd")]
 position = Vector2(988, 251)
-script = ExtResource("2_5q4o7")
-
-[node name="Fish" type="Sprite2D" parent="Fish"]
-modulate = Color(0.881982, 0, 0.113214, 1)
-texture = ExtResource("1_gh0ne")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish"]
-shape = SubResource("CapsuleShape2D_3cfgd")
 
 [node name="Projectile" parent="." instance=ExtResource("3_3cfgd")]
 position = Vector2(141, 252)
