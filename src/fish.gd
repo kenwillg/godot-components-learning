@@ -1,6 +1,7 @@
-extends Sprite2D
+extends CharacterBody2D
 
 @export var SPEED:= -200
 
 func _physics_process(delta: float) -> void:
-	global_position += Vector2(SPEED * delta, 0)
+	velocity = Vector2(SPEED, 0)
+	move_and_slide()
